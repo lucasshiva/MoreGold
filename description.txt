@@ -1,0 +1,3 @@
+Make enemies drop more gold. By default, enemies drop 2x more gold on death. This value can be changed in the settings.
+
+Icon by Freepik.
