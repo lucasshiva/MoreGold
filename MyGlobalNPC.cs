@@ -1,4 +1,5 @@
 ﻿using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ModLoader;
 
 namespace MoreGold
@@ -8,7 +9,8 @@ namespace MoreGold
         public override void OnKill(NPC npc)
         {
             var config = ModContent.GetInstance<Config>();
-            if (npc.value > 0)
+
+            if ((config.IncludeBosses && npc.boss) || (config.IncludeEnemies && !npc.boss))
                 npc.value *= config.GoldRate;
 
             base.OnKill(npc);

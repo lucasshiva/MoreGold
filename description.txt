@@ -1,3 +1,12 @@
-Make enemies drop more gold. By default, enemies drop 2x more gold on death. This value can be changed in the settings.
+Make enemies and/or bosses drop more gold. By default, enemies drop 2x more gold on death. This value can be changed in the settings.
+
+This mod should be compatible with modded enemies and bosses (when in normal mode). Support for modded treasure bags is planned for the near future.
 
 Icon by Freepik.
+
+CHANGELOG:
+- 0.2.0
+Can now choose between enemies, bosses, or both. Added support for vanilla treasure bags.
+
+- 0.1.0
+Mod launch.
