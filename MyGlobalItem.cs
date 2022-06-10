@@ -12,16 +12,12 @@ namespace MoreGold
 			if (context != "bossBag")
 				return;
 
-			var config = ModContent.GetInstance<Config>();
 			// Do nothing if `IncludeBosses` is false.
+			var config = ModContent.GetInstance<Config>();
 			if (!config.IncludeBosses)
 				return;
-            
-			var entitySource = player.GetSource_OpenItem(arg);
 
-			// Sadly, I can't seem to find a way to get `bossID` from `arg`.
-			// Changing the boss' value does not seem to be possible either, as Terraria creates a new npc when opening treasure bags.
-			// This also means that, currently, this only works with vanilla bosses, as I'd have to manually add compatibility for modded bosses.
+			// Vanilla treasure bags.
 			int bossID = -1;
 			if (arg == 3318)
 				bossID = 50;
@@ -86,13 +82,17 @@ namespace MoreGold
 			if (arg == 5111)
 				bossID = 668;
 
+			// For modded treasure bags.
+			ItemLoader.OpenBossBag(arg, player, ref bossID);
+
 			// We construct a new NPC (just like the source code does), which lets us access its value.
 			var npc = ContentSamples.NpcsByNetId[bossID];
 
-			// Then, need to subtract `npc.value`, as it is already included in the treasure bag.
+			// Then, we subtract `npc.value`, as the default `npc.value` is already included in the treasure bag.
 			float value = (npc.value * config.GoldRate) - npc.value;
 
 			// Finally, we spawn the extra coins.
+			var entitySource = player.GetSource_OpenItem(arg);
 			while ((int)value > 0)
 			{
 				if (value > 1000000f)
