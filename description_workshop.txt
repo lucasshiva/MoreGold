@@ -1,9 +1,7 @@
-Increases the gold dropped by enemies and bosses.
+Increases the gold dropped by enemies and bosses on death.
 
 By default, enemies drop 2x more gold. 
-The multiplier is configurable and applies to both vanilla and modded enemies and bosses, including treasure bags in expert mode.
-
-Source: https://github.com/lucasshiva/MoreGold
+The multiplier is fully configurable in the mod settings and applies to both vanilla and modded enemies and bosses, including treasure bags in expert mode.
 
 CHANGELOG:
 - 0.4.0

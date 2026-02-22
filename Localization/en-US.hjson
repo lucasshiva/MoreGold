@@ -1,0 +1,8 @@
+Mods: {
+	MoreGold: {
+		Keybinds: {
+			IncreaseMultiplier.DisplayName: Increment multiplier
+			DecreaseMultiplier.DisplayName: Decrement multiplier
+		}
+	}
+}

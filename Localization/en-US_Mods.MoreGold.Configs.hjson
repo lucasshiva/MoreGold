@@ -1,0 +1,14 @@
+MoreGoldConfig: {
+	GoldMultiplierSlider: {
+		Label: Gold Multiplier
+		Tooltip:
+			'''
+			Multiply gold dropped by X times.
+			Also applies to treasure bags for expert/master worlds.
+			This might stack with multipliers applied by other mods.
+			'''
+	}
+
+	Headers.General: General
+	DisplayName: Main Config
+}
